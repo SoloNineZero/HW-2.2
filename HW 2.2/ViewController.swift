@@ -21,20 +21,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var switchButton: UIButton!
     
-    var burningLight = Light.red
+    private var burningLight = Light.green
+    
+    let lightOn: CGFloat = 1
+    let lightOff: CGFloat = 0.3
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        switchButton.layer.cornerRadius = 12
         
         redLight.layer.cornerRadius = redLight.frame.width / 2
         yellowLight.layer.cornerRadius = yellowLight.frame.width / 2
         greenLight.layer.cornerRadius = greenLight.frame.width / 2
 
-        redLight.alpha = 0.3
-        yellowLight.alpha = 0.3
-        greenLight.alpha = 0.3
+        redLight.alpha = lightOff
+        yellowLight.alpha = lightOff
+        greenLight.alpha = lightOff
+        
+        switchButton.layer.cornerRadius = 10
     }
 
     @IBAction func switchButtonDidTapped() {
@@ -43,19 +46,18 @@ class ViewController: UIViewController {
         
         switch burningLight {
         case .red:
-            yellowLight.alpha = 1
-            redLight.alpha = 0.3
+            yellowLight.alpha = lightOn
+            redLight.alpha = lightOff
             burningLight = .yellow
         case .yellow:
-            greenLight.alpha = 1
-            yellowLight.alpha = 0.3
+            greenLight.alpha = lightOn
+            yellowLight.alpha = lightOff
             burningLight = .green
         case .green:
-            redLight.alpha = 1
-            greenLight.alpha = 0.3
+            redLight.alpha = lightOn
+            greenLight.alpha = lightOff
             burningLight = .red
         }
     }
-    
 }
 
