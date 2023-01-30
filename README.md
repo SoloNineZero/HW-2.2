@@ -1,5 +1,5 @@
 # HW-2.2 Traffic light
-App that can toggle traffic lights. On first start, the color of each traffic light must be off.
+An application that can switch traffic lights. At the first start, the color of each traffic light is off.
 
 Pressing the "START" button turns on the red light and changes the button title to "NEXT". Subsequent pressing of the button will change the active color to the next in order.
 
