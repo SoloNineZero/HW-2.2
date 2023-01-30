@@ -42,7 +42,9 @@ class ViewController: UIViewController {
 
     @IBAction func switchButtonDidTapped() {
         
-        switchButton.setTitle("NEXT", for: .normal)
+        if switchButton.currentTitle == "Start" {
+            switchButton.setTitle("NEXT", for: .normal)
+        }
         
         switch burningLight {
         case .red:
