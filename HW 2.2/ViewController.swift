@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 
     @IBAction func switchButtonDidTapped() {
         
-        if switchButton.currentTitle == "Start" {
+        if switchButton.currentTitle == "START" {
             switchButton.setTitle("NEXT", for: .normal)
         }
         
